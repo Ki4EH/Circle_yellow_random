@@ -1,4 +1,5 @@
 import sys
+import time
 
 import random
 from PyQt5 import uic, QtCore, QtGui
@@ -30,13 +31,12 @@ class MyWidget(QMainWindow):
             self.update()
 
     def draw(self):
-        for i in range(random.randint(10, 50)):
+        # for i in range(random.randint(10, 50)):
             self.qp.setPen(QPen(Qt.yellow, 8, Qt.SolidLine))
             x = random.randint(100, 500)
             y = random.randint(100, 500)
-            z = random.randint(100, 500)
-            v = random.randint(100, 500)
-            self.qp.drawEllipse(x, y, z, v)
+            self.qp.drawEllipse(x, x, y, y)
+            time.sleep(1)
 
     def circle(self):
         self.draw = True
